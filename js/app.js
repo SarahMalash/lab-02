@@ -11,12 +11,13 @@ $(document).ready(function(){
     let $obj1Clone = $('.imgs1').clone();
     $obj1Clone.find('h2').text(this.title);
     $obj1Clone.find('img').attr('src',this.image_url);
-    $obj1Clone.find('p').text(this.descreption);
-    $obj1Clone.find('p').text(this.keyword);
-    $obj1Clone.find('p').text(this.horns);
+    $obj1Clone.("p").first().text(this.descreption);
+    // $obj1Clone.find('p').text(this.keyword);
+    $obj1Clone.find('p').last().text(this.horns);
+    //$('.imgs1 p:nth-child(0)').text(this.descreption);
     $obj1Clone.removeClass('imgs1');
     $obj1Clone.attr('id',this.title);
-    $('main section').append($obj1Clone);
+    $('main section').append($obj1Clone)
 
 
   };
